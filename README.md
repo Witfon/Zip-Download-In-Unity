@@ -79,7 +79,7 @@ Feel free modify these scripts to suit your needs.
 
 **Pros:**
 - Will work anywhere
-- Completely free
+- Completely free and fairly easy to set up if you follow the steps
 
 **Cons:**
 - Slightly larger file size
