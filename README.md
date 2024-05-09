@@ -1,8 +1,9 @@
 # Zip-Download-In-Unity
-A guide on how to download zip-like files in Unity WebGL apps
+A guide on how to download zip-like files in Unity WebGL apps. If your Unity project is not a WebGL app, these aren't the droids you're looking for.
 
 ## Why do I get an error when downloading files in my WebGL build?
 Downloading anything more complex than an image or a text file in Unity WebGL apps will throw you an error when you are running the app outside your Unity editor. This happens because of CORS, an internet security measure.
+This will happen regardless if you try to download a shady zip file or Unity's proprietary asset bundle file.
 
 ## Why would I want to download zip-like files in my Unity game?
 Let's say you ae making a card game. You want to be able to add new cards to the game. These cards require things like card stats and card images. You also need to keep the extra data of each card sprite like their name, so you can assign them to the proper card.
@@ -14,10 +15,10 @@ You can save your card stats as a JSON text file and you card images as individu
 
 You won't have any trouble downloading these files in your editor, but you will get an error when trying to download your zip/tar/rar/assetbundle... file in your build. You'll only be able to successfully download basic text and image files.
 
-Mass-downloading all your assets as separate files is also not a good option, because it will most likely trigger DDOS protection on your cloud service and make it unavailable for some time.
+Mass-downloading all your assets as separate files is also not a good option, because it will most likely trigger DDOS protection on your cloud service and make it unavailable for some time if you try to download 50+ files in burst.
 
 If you don't need the extra sprite data, like their names and the ability to cut multiple sprites from your downloaded texture to avoid tanking performance, you don't need to read further.
-You can keep using Unity's WebRequest to download everything you need.
+You can use Unity's WebRequest to download your texture.
 
 ## How can I download zip-like files in my Unity WebGL app?
 There are three solutions that you can use to avoid getting CORS errors when downloading archive files:
